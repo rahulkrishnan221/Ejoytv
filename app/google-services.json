@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "874014095154",
+    "firebase_url": "https://ejoytv-e0c67.firebaseio.com",
+    "project_id": "ejoytv-e0c67",
+    "storage_bucket": "ejoytv-e0c67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874014095154:android:51b738801c7d7651",
+        "android_client_info": {
+          "package_name": "com.priwil.ejoytv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874014095154-o7phaf4rj5t7r84d0ii8gen5l8sddsvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.priwil.ejoytv",
+            "certificate_hash": "b295de7be408b8cc10a908542b2a84bde36b63bd"
+          }
+        },
+        {
+          "client_id": "874014095154-rpg9p57hiuff4onurtdm5a62ja276169.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtZv9CQNQiVERzt5EGorfAD48UtSS8YMg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874014095154-rpg9p57hiuff4onurtdm5a62ja276169.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
