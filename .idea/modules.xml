@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Ejoytv.iml" filepath="$PROJECT_DIR$/Ejoytv.iml" />
+      <module fileurl="file://C:\Users\SURYA\Documents\Github\Ejoytv\Ejoytv.iml" filepath="C:\Users\SURYA\Documents\Github\Ejoytv\Ejoytv.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\SURYA\Documents\Github\Ejoytv\app\app.iml" filepath="C:\Users\SURYA\Documents\Github\Ejoytv\app\app.iml" />
     </modules>
   </component>
 </project>
