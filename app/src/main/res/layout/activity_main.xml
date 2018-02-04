@@ -12,13 +12,12 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/appbar_padding_top"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
@@ -27,58 +26,60 @@
 
         </android.support.v7.widget.Toolbar>
 
-
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabTextColor="@color/tabtc"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabSelectedTextColor="@color/colorPrimary"
+            android:layout_height="58dp"
             app:tabBackground="@color/tabbg"
-            app:tabMode="scrollable">
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/tabtc">
 
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_1"
                 android:icon="@drawable/mhome"
+                android:text="@string/tab_text_1"
                 />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_2"
-                android:icon="@drawable/mlive"/>
+                android:icon="@drawable/mlive"
+                android:text="@string/tab_text_2" />
+
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_3"
-                android:icon="@drawable/mradio"/>
+                android:icon="@drawable/mradio"
+                android:text="@string/tab_text_3" />
+
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_4"
-                android:icon="@drawable/mtv"/>
+                android:icon="@drawable/mtv"
+                android:text="@string/tab_text_4" />a
+
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_5"
-                android:icon="@drawable/mconcert"/>
+                android:icon="@drawable/mconcert"
+                android:text="@string/tab_text_5" />
+
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_6"
                 android:icon="@drawable/mmusic"
-                android:textColor="@color/black"/>
-
+                android:text="@string/tab_text_6"
+                android:textColor="@color/black" />
 
 
         </android.support.design.widget.TabLayout>
