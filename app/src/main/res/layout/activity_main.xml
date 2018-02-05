@@ -17,7 +17,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
@@ -29,12 +29,13 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="53dp"
             app:tabBackground="@color/tabbg"
             app:tabIndicatorColor="@color/colorPrimary"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextColor="@color/tabtc">
+            app:tabTextColor="@color/tabtc"
+            app:tabTextAppearance="@style/tabitem1">
 
 
             <android.support.design.widget.TabItem
@@ -64,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/mtv"
-                android:text="@string/tab_text_4" />a
+                android:text="@string/tab_text_4" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem5"

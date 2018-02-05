@@ -79,10 +79,10 @@ public class home_fragment extends Fragment {
 //Add few items to slider_image_list ,this should contain url of images which should be displayed in slider
 // here i am adding few sample image links, you can add your own
 
-        slider_image_list.add("http://images.all-free-download.com/images/graphiclarge/mountain_bongo_animal_mammal_220289.jpg");
-        slider_image_list.add("http://images.all-free-download.com/images/graphiclarge/bird_mountain_bird_animal_226401.jpg");
-        slider_image_list.add("http://images.all-free-download.com/images/graphiclarge/mountain_bongo_animal_mammal_220289.jpg");
-        slider_image_list.add("http://images.all-free-download.com/images/graphiclarge/bird_mountain_bird_animal_226401.jpg");
+        slider_image_list.add("http://www.wallpaperbetter.com/wallpaper/227/660/902/church-1080P-wallpaper-middle-size.jpg");
+        slider_image_list.add("https://www.hdwallpapers.in/walls/catholic_church_vatican-HD.jpg");
+        slider_image_list.add("https://images4.alphacoders.com/690/690392.jpg");
+        slider_image_list.add("https://images.alphacoders.com/440/440999.jpg");
 
 
         sliderPagerAdapter = new SliderPagerAdapter(getActivity(), slider_image_list);//check;
@@ -113,12 +113,12 @@ public class home_fragment extends Fragment {
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(getActivity());//check
             dots[i].setText(Html.fromHtml("&#8226;"));
-            dots[i].setTextSize(35);
-            dots[i].setTextColor(Color.parseColor("#000000"));
+            dots[i].setTextSize(45);
+            dots[i].setTextColor(Color.parseColor("#757575"));
             ll_dots.addView(dots[i]);
         }
 
         if (dots.length > 0)
-            dots[currentPage].setTextColor(Color.parseColor("#FFFFFF"));
+            dots[currentPage].setTextColor(Color.parseColor("#8E24AA"));
     }
 }
