@@ -1,10 +1,13 @@
 package com.priwil.ejoytv;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +15,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -30,15 +43,29 @@ public class home_fragment extends Fragment {
     private LinearLayout ll_dots;
     SliderPagerAdapter sliderPagerAdapter;
     ArrayList<String> slider_image_list;
+    ArrayList<String> links=new ArrayList<>();
     private TextView[] dots;
     int page_position = 0;
+
+
+   // private FirebaseDatabase database;
+    DatabaseReference myRef;
+  //  DatabaseReference myRef_featured;
+    private RecyclerView mBlogList;
+    private int columns=2;
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.activity_home, container, false);
+        mBlogList=(RecyclerView)view.findViewById(R.id.blog_list);
+        mBlogList.setLayoutManager(new GridLayoutManager(getActivity(),columns));
 
+
+
+        FirebaseApp.initializeApp(getActivity());
 // method for initialisation
         init(view);
 
@@ -65,6 +92,7 @@ public class home_fragment extends Fragment {
                 handler.post(update);
             }
         }, 100, 5000);
+
     return view;
     }
 
@@ -121,4 +149,63 @@ public class home_fragment extends Fragment {
         if (dots.length > 0)
             dots[currentPage].setTextColor(Color.parseColor("#8E24AA"));
     }
+
+
+
+
+
+    @Override
+    public void onStart()
+    {
+      DatabaseReference  myRef_featured=FirebaseDatabase.getInstance().getReference();
+
+        super.onStart();
+        FirebaseRecyclerAdapter<getsetimage, BlogViewHolder> firebaseRecyclerAdapter=new FirebaseRecyclerAdapter<getsetimage, BlogViewHolder>(
+                getsetimage.class,
+                R.layout.desgin_row,
+                BlogViewHolder.class,
+                myRef_featured)
+        {
+            @Override
+            protected void populateViewHolder(BlogViewHolder viewHolder, getsetimage model,int position)
+            {
+                final String post_key=getRef(position).getKey();
+
+
+                viewHolder.setImage(getActivity(), model.getImage());
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+
+                    }
+                });
+            }
+        };
+
+        mBlogList.setAdapter(firebaseRecyclerAdapter);
+
+    }
+
+    public static class BlogViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+        public BlogViewHolder(View itemView)
+        {
+            super(itemView);
+            mView=itemView;
+
+        }
+
+
+        public void setImage(Context ctx, String image)
+        {
+            ImageView post_image = (ImageView) mView.findViewById(R.id.imageViewy);
+            //We pass context
+            Picasso.with(ctx).load(image).into(post_image);
+        }
+
+    }
+
+
 }
